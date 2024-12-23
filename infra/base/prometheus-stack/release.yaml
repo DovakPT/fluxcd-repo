@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      ersion: 67.3.X
+      version: 67.3.X
       interval: 5h # check for new version every 5 hours
       sourceRef:
         kind: HelmRepository
