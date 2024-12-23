@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2 # API version of the HelmRepository
 kind: HelmRepository # Specifies the kind of resource
 metadata:
   name: prometheus-community # Name of the HelmRepository resource
-  namespace: flux-system # Namespace where this resource resides
+  namespace: monitoring # Namespace where this resource resides
 spec:
   interval: 1h0m # Interval at which the repository will be refreshed
   url: https://prometheus-community.github.io/helm-charts # URL of the Helm chart repository
