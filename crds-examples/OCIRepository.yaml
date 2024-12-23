@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2 # Specifies the API version for the OCIRepository resource.
+kind: OCIRepository # Declares this resource as an OCIRepository.
+metadata:
+  name: my-oci-repo # A unique name for this OCIRepository.
+  namespace: flux-system # The namespace where FluxCD operates by default.
+spec:
+  interval: 1m0s # How often to check the repository for updates.
+  url: oci://ghcr.io/my-org/my-charts # The OCI registry URL containing the Helm charts.
+  secretRef:
+    name: oci-secret # Reference to a secret for authenticating with the registry.

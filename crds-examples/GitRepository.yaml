@@ -1,0 +1,11 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2 # Specifies the API version for the GitRepository resource.
+kind: GitRepository # Declares this resource as a GitRepository.
+metadata:
+  name: my-git-repo # A unique name for this GitRepository.
+  namespace: flux-system # The namespace where FluxCD operates by default.
+spec:
+  interval: 1m0s # How often to check the Git repository for updates.
+  url: https://github.com/my-org/my-repo.git # URL of the Git repository to sync with.
+  branch: main # Branch to monitor and sync from.
+  secretRef:
+    name: git-ssh-secret # Reference to a secret for authenticating with the Git repository.

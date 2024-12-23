@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1 # Specifies the API version for the HelmRelease resource.
+kind: HelmRelease # Declares this resource as a HelmRelease.
+metadata:
+  name: my-app # A unique name for this HelmRelease.
+  namespace: apps # The namespace where the application will be deployed.
+spec:
+  interval: 5m0s # How often to reconcile the Helm release.
+  chart:
+    spec:
+      chart: my-chart # Name of the chart to install.
+      version: 1.2.3 # Specific version of the chart to deploy.
+      sourceRef:
+        kind: OCIRepository # Type of source for the chart (e.g., OCIRepository, GitRepository).
+        name: my-oci-repo # Name of the source defined in OCIRepository.
+  values: # Overrides for the default values.yaml in the chart.
+    replicaCount: 3 # Sets the number of replicas for the application.
+    image:
+      repository: my-app-image # Docker image repository for the app.
+      tag: latest # Tag of the image to deploy.
