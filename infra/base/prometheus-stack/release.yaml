@@ -17,15 +17,3 @@ spec:
         name: prometheus-community
   releaseName: kube-prometheus-stack
   interval: 1h # reconcile every 1 hour
-
-# apiVersion: source.toolkit.fluxcd.io/v1
-# kind: HelmChart
-# metadata:
-#   name: kube-prometheus-stack
-#   namespace: monitoring
-# spec:
-#   chart: kube-prometheus-stack
-#   version: 67.4.0 # Optional
-#   sourceRef:
-#     kind: HelmRepository
-#     name: kube-prometheus-stack
