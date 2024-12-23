@@ -1,11 +1,12 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2 # Specifies the API version for the GitRepository resource.
-kind: GitRepository # Declares this resource as a GitRepository.
+# Defines a GitRepository resource to fetch configuration from a Git repository
+apiVersion: source.toolkit.fluxcd.io/v1beta2 # API version of the GitRepository resource
+kind: GitRepository # Specifies the kind of resource
 metadata:
-  name: my-git-repo # A unique name for this GitRepository.
-  namespace: flux-system # The namespace where FluxCD operates by default.
+  name: my-git-repo # Name of the GitRepository resource
+  namespace: flux-system # Namespace where this resource resides
 spec:
-  interval: 1m0s # How often to check the Git repository for updates.
-  url: https://github.com/my-org/my-repo.git # URL of the Git repository to sync with.
-  branch: main # Branch to monitor and sync from.
+  interval: 1m0s # Interval at which the repository will be fetched
+  url: https://github.com/example/repo.git # URL of the Git repository
+  branch: main # Branch to fetch
   secretRef:
-    name: git-ssh-secret # Reference to a secret for authenticating with the Git repository.
+    name: git-credentials # Reference to a Kubernetes secret for authentication
