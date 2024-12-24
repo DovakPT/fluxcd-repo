@@ -1,4 +1,4 @@
 resources:
   - "./nginx"
   - "./capacitor"
-  - "./prometheus-stack"
+# - "./prometheus-stack"
